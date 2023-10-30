@@ -1,3 +1,7 @@
+This workshop has been modified to be run on NeSI
+
+The original workshop details are below
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3260560.svg)](https://doi.org/10.5281/zenodo.3260560)
 
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://slack-invite.carpentries.org/)
