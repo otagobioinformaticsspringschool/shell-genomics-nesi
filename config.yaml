@@ -11,7 +11,7 @@
 carpentry: 'dc'
 
 # Overall title for pages.
-title: 'Introduction to the Command Line for Genomics'
+title: 'Introduction to the Command Line for Genomics - NeSI'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2015-03-24'
@@ -27,7 +27,7 @@ life_cycle: 'stable'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/datacarpentry/shell-genomics'
+source: 'https://github.com/otagobioinformaticsspringschool/shell-genomics-nesi'
 
 # Default branch of your lesson
 branch: 'main'
@@ -81,6 +81,6 @@ profiles:
 # sandpaper and varnish versions) should live
 
 
-url: 'https://datacarpentry.github.io/shell-genomics'
+url: 'https://otagobioinformaticsspringschool.github.io/shell-genomics-nesi'
 analytics: carpentries
 lang: en
