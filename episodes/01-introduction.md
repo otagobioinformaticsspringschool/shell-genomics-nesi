@@ -22,9 +22,11 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+**This lesson has been adapted from the original [Data Carpentry - Shell Genomics](https://datacarpentry.org/shell-genomics/) to be run using the NeSI infrastructure as part of the Otago Bioinformatics Spring School instead of AWS.**
+
 ## What is a shell and why should I care?
 
-A *shell* is a computer program that presents a command line interface
+A _shell_ is a computer program that presents a command line interface
 which allows you to control your computer using commands entered
 with a keyboard instead of controlling graphical user interfaces
 (GUIs) with a mouse/keyboard/touchscreen combination.
@@ -64,6 +66,24 @@ We will also be using several bioinformatic packages in later lessons and instal
 would take up time even more time. A 'ready-to-go' server lets us focus on learning.
 
 ## How to access the remote server
+
+During this workshop we will be running the material on the NeSI platform, using the Jupyter interface, however it is
+also possible to run this material locally on your own machine.
+
+One of the differences between running on NeSI or your own machine is that on NeSI we preinstall popular software and make it available to our users, whereas on your own machine you need to install the software yourself (e.g. using a package manager such as conda).
+
+### Connect to Jupyter on NeSI"
+
+    1. Connect to [https://jupyter.nesi.org.nz](https://jupyter.nesi.org.nz)
+    2. <p>Enter NeSI username, HPC password and 6 digit second factor token (as set on <a href="https://my.nesi.org.nz/account/hpc-account">MyNeSI</a>)<br>![image](./nesi_images/jupyter_login_labels_updated.png)</p>
+    3. <p>Choose server options as below
+    <br>make sure to choose the correct project code `nesi02659`, number of CPUs **4**, memory **4GB** prior to pressing ![image](./nesi_images/start_button.png){width="60"} button.
+
+    <br>![image](fig/nesi_images/jupyter_server2022.png){width="700"}
+
+    4. <p>Start a terminal session from the JupyterLab launcher<br>![image](fig/nesi_images/jupyterLauncher.png){width="500"}
+
+::::::::::::::::::::::::::::::::::::::::: callout
 
 You can log-in to the remote server using the [instructions from the Introduction to Cloud Computing for Genomics lesson](https://datacarpentry.org/cloud-genomics/02-logging-onto-cloud#logging-onto-a-cloud-instance).
 Your instructor will supply to you the `ip_address` and password that you need to login.
@@ -112,7 +132,9 @@ This will scroll your screen down to give you a fresh screen and will make it ea
 You haven't lost any of the information on your screen. If you scroll up, you can see everything that has been output to your screen
 up until this point.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## Tip
 
@@ -132,7 +154,7 @@ which hold files or other directories.
 
 Several commands are frequently used to create, inspect, rename, and delete files and directories.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## Preparation Magic
 
@@ -154,7 +176,7 @@ For example, if the output of `echo $PS1` was `\u@\h:\w $ `,
 then type those characters between the quotes in the above command: `PS1="\u@\h:\w $ "`.
 Alternatively, you can reset your original prompt by exiting the shell and opening a new session.
 
-This isn't necessary to follow along (in fact, your prompt may have other helpful information you want to know about).  This is up to you!
+This isn't necessary to follow along (in fact, your prompt may have other helpful information you want to know about). This is up to you!
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -175,15 +197,15 @@ i.e.,
 the directory that the computer assumes we want to run commands in,
 unless we explicitly specify something else.
 Here,
-the computer's response is `/home/dcuser`,
-which is the top level directory within our cloud system:
+the computer's response is `/home/<username>`,
+which is the top level directory within NeSI:
 
 ```bash
 $ pwd
 ```
 
 ```output
-/home/dcuser
+/home/<username>
 ```
 
 Let's look at how our file system is organized. We can see what files and subdirectories are in this directory by running `ls`,
@@ -194,7 +216,7 @@ $ ls
 ```
 
 ```output
-R  r_data  shell_data
+obss_2023
 ```
 
 `ls` prints the names of the files and directories in the current directory in
@@ -206,17 +228,49 @@ The command to change locations in our file system is `cd`, followed by a
 directory name to change our working directory.
 `cd` stands for "change directory".
 
-Let's say we want to navigate to the `shell_data` directory we saw above.  We can
+Let's say we want to navigate to the `obss_2023/commandline/shell_data` directory we saw above. We can
 use the following command to get there:
 
 ```bash
-$ cd shell_data
+$ cd obss_2023
 ```
 
 Let's look at what is in this directory:
 
 ```bash
 $ ls
+```
+
+```output
+commandline  genome_assembly  genomic_dna  intro_git  intro_snakemake  nanopore
+```
+
+And we'll then navigate into `commandline`
+
+```bash
+cd commandline
+```
+
+and take a look
+
+```bash
+$ ls
+```
+
+```output
+shell4b_data  shell_data
+```
+
+And then we'll `cd` into `shell_data`
+
+```bash
+cd shell_data
+```
+
+And take a look
+
+```bash
+ls
 ```
 
 ```output
@@ -250,7 +304,7 @@ file using your keyboard's down arrow or use the <kbd>Space</kbd> key to go forw
 and the <kbd>b</kbd> key to go backwards one page. When you are done reading, hit <kbd>q</kbd>
 to quit.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Challenge
 
@@ -258,7 +312,7 @@ Use the `-l` option for the `ls` command to display more information for each it
 in the directory. What is one piece of additional information this long format
 gives you that you don't see with the bare `ls` command?
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -316,11 +370,10 @@ $ cd
 then enter:
 
 ```bash
-$ cd she<tab>
+$ cd obss_2023/com<tab>/she<tab>_<tab>
 ```
 
-The shell will fill in the rest of the directory name for
-`shell_data`.
+The shell will fill in the rest of the directory name for `commandline` and then `shell_data`.
 
 Now change directories to `untrimmed_fastq` in `shell_data`
 
@@ -384,5 +437,3 @@ using the command line shell enables us to make our workflow more efficient and 
 - Tab completion can reduce errors from mistyping and make work more efficient in the shell.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
