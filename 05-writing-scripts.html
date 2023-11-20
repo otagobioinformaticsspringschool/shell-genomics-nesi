@@ -189,7 +189,6 @@
 <li><a href="#writing-scripts">Writing scripts</a></li>
 <li><a href="#making-the-script-into-a-program">Making the script into a program</a></li>
 <li><a href="#moving-and-downloading-data">Moving and Downloading Data</a></li>
-<li><a href="#transferring-data-between-your-local-machine-and-the-cloud">Transferring Data Between your Local Machine and the Cloud</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -263,7 +262,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Writing Scripts and Working with Data</h1>
-        <p> Last updated on 2023-05-08 | 
+        <p> Last updated on 2023-11-20 | 
         
         <a href="https://github.com/otagobioinformaticsspringschool/shell-genomics-nesi/edit/main/episodes/05-writing-scripts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -325,20 +324,21 @@ FASTA file, but we’ll see as we go through other tutorials, there are a
 lot of reasons we’ll want to write a file, or edit an existing file.</p>
 <p>To add text to files, we’re going to use a text editor called Nano.
 We’re going to create a file to take notes about what we’ve been doing
-with the data files in <code>~/shell_data/untrimmed_fastq</code>.</p>
+with the data files in
+<code>~/obss_2023/commandline/shell_data/untrimmed_fastq</code>.</p>
 <p>This is good practice when working in bioinformatics. We can create a
 file called <code>README.txt</code> that describes the data files in the
 directory or documents how the files in that directory were generated.
 As the name suggests, it’s a file that we or others should read to
 understand the information in that directory.</p>
 <p>Let’s change our working directory to
-<code>~/shell_data/untrimmed_fastq</code> using <code>cd</code>, then
-run <code>nano</code> to create a file called
+<code>~/obss_2023/commandline/shell_data/untrimmed_fastq</code> using
+<code>cd</code>, then run <code>nano</code> to create a file called
 <code>README.txt</code>:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/shell_data/untrimmed_fastq</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/obss_2023/commandline/shell_data/untrimmed_fastq</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nano README.txt</span></code></pre>
 </div>
 <p>You should see something like this:</p>
@@ -677,7 +677,23 @@ to. So, if you are logged into AWS on the command line and execute the
 downloaded to your AWS machine, not your local one.</p>
 </div>
 <div class="section level3">
-<h3 id="moving-files-between-your-laptop-and-your-instance">Moving files between your laptop and your instance<a class="anchor" aria-label="anchor" href="#moving-files-between-your-laptop-and-your-instance"></a></h3>
+<h3 id="moving-files-between-your-laptop-and-nesi-with-jupyterhub">Moving files between your laptop and NeSI with Jupyterhub<a class="anchor" aria-label="anchor" href="#moving-files-between-your-laptop-and-nesi-with-jupyterhub"></a></h3>
+<p>With Jupyterhub on NeSI, one of the easiest way to move small-medium
+sized files is to use the upload option on the file explorer panel</p>
+<figure><img src="fig/nesi_images/upload.png" class="figure mx-auto d-block"></figure><p>And to download a file, you can right click on it in the explorer
+panel and select “Download”</p>
+<figure><img src="fig/nesi_images/download.png" class="figure mx-auto d-block"></figure><div id="callout4" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout4"></a>
+</h3>
+<div class="callout-content">
+<p><strong>Original instructions for downloading data from
+AWS</strong></p>
+<div class="section level3">
+<h3 id="moving-files-between-your-laptop-and-your-instance---aws">Moving files between your laptop and your instance - AWS<a class="anchor" aria-label="anchor" href="#moving-files-between-your-laptop-and-your-instance---aws"></a></h3>
 <p>What if the data you need is on your local computer, but you need to
 get it <em>into</em> the cloud? There are also several ways to do this,
 but it’s <em>always</em> easier to start the transfer locally.
@@ -686,9 +702,9 @@ not be logged into your instance, it should be showing your local
 computer. If you’re using a transfer program, it needs to be installed
 on your local machine, not your instance.</strong></p>
 </div>
-</section><section id="transferring-data-between-your-local-machine-and-the-cloud"><h2 class="section-heading">Transferring Data Between your Local Machine and the Cloud<a class="anchor" aria-label="anchor" href="#transferring-data-between-your-local-machine-and-the-cloud"></a>
-</h2>
-<hr class="half-width"><p>If you’re using Windows with PuTTY instead of Git Bash, please select
+<div class="section level2">
+<h2 id="transferring-data-between-your-local-machine-and-the-cloud">Transferring Data Between your Local Machine and the Cloud<a class="anchor" aria-label="anchor" href="#transferring-data-between-your-local-machine-and-the-cloud"></a></h2>
+<p>If you’re using Windows with PuTTY instead of Git Bash, please select
 the alternative option here:
 <select id="id_platform" name="platformlist" onchange="change_content_by_platform('id_platform');return false;"></select></p>
 <p><option value="unix" id="id_unix" selected> Linux, Mac OS, Git Bash
@@ -812,6 +828,10 @@ address)</strong>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -824,6 +844,7 @@ address)</strong>
 <li>Transferring information to and from virtual and local
 computers.</li>
 </ul></div>
+</div>
 </div>
 </div>
 </section></div> <!-- / div.lesson-content -->
@@ -885,7 +906,7 @@ computers.</li>
   "url": "https://otagobioinformaticsspringschool.github.io/shell-genomics-nesi/05-writing-scripts.html",
   "identifier": "https://otagobioinformaticsspringschool.github.io/shell-genomics-nesi/05-writing-scripts.html",
   "dateCreated": "2015-03-24",
-  "dateModified": "2023-05-08",
+  "dateModified": "2023-11-20",
   "datePublished": "2023-11-20"
 }
 

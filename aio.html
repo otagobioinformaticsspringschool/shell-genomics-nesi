@@ -695,7 +695,7 @@ don’t see with the bare <code>ls</code> command?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -980,7 +980,7 @@ example <code>.my_hidden_directory</code></p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>First use the <code>man</code> command to look at the options for
 <code>ls</code>.</p>
@@ -1086,7 +1086,7 @@ without having to go through the intermediate directory.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1199,7 +1199,7 @@ display?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>No: there <em>is</em> a directory <code>backup</code> in
@@ -2141,7 +2141,7 @@ can be used to repeat recently used commands.</li>
 </div>
 </section></section><section id="aio-04-redirection"><p>Content from <a href="04-redirection.html">Redirection</a></p>
 <hr>
-<p> Last updated on 2023-05-08 | 
+<p> Last updated on 2023-11-20 | 
         
         <a href="https://github.com/otagobioinformaticsspringschool/shell-genomics-nesi/edit/main/episodes/04-redirection.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2213,7 +2213,7 @@ sure we are in the correct directory:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/shell_data/untrimmed_fastq</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/obss_2023/commandline/shell_data/untrimmed_fastq</span></code></pre>
 </div>
 <p>Suppose we want to see how many reads in our file have really bad
 segments containing 10 consecutive unknown nucleotides (Ns).</p>
@@ -2627,7 +2627,7 @@ it to a file.</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-B1</span> <span class="at">-A2</span> NNNNNNNNNN SRR098026.fastq <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-B1</span> <span class="at">-A2</span> NNNNNNNNNN SRR098026.fastq <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre>
 </div>
 <p>Because we asked <code>grep</code> for all four lines of each FASTQ
 record, we need to divide the output by four to get the number of
@@ -3001,7 +3001,7 @@ command as input to the second command.</li>
 </div>
 </section></section><section id="aio-05-writing-scripts"><p>Content from <a href="05-writing-scripts.html">Writing Scripts and Working with Data</a></p>
 <hr>
-<p> Last updated on 2023-05-08 | 
+<p> Last updated on 2023-11-20 | 
         
         <a href="https://github.com/otagobioinformaticsspringschool/shell-genomics-nesi/edit/main/episodes/05-writing-scripts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3062,20 +3062,21 @@ FASTA file, but we’ll see as we go through other tutorials, there are a
 lot of reasons we’ll want to write a file, or edit an existing file.</p>
 <p>To add text to files, we’re going to use a text editor called Nano.
 We’re going to create a file to take notes about what we’ve been doing
-with the data files in <code>~/shell_data/untrimmed_fastq</code>.</p>
+with the data files in
+<code>~/obss_2023/commandline/shell_data/untrimmed_fastq</code>.</p>
 <p>This is good practice when working in bioinformatics. We can create a
 file called <code>README.txt</code> that describes the data files in the
 directory or documents how the files in that directory were generated.
 As the name suggests, it’s a file that we or others should read to
 understand the information in that directory.</p>
 <p>Let’s change our working directory to
-<code>~/shell_data/untrimmed_fastq</code> using <code>cd</code>, then
-run <code>nano</code> to create a file called
+<code>~/obss_2023/commandline/shell_data/untrimmed_fastq</code> using
+<code>cd</code>, then run <code>nano</code> to create a file called
 <code>README.txt</code>:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/shell_data/untrimmed_fastq</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/obss_2023/commandline/shell_data/untrimmed_fastq</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nano README.txt</span></code></pre>
 </div>
 <p>You should see something like this:</p>
@@ -3424,7 +3425,24 @@ to. So, if you are logged into AWS on the command line and execute the
 downloaded to your AWS machine, not your local one.</p>
 </div>
 <div class="section level3">
-<h3 id="moving-files-between-your-laptop-and-your-instance">Moving files between your laptop and your instance<a class="anchor" aria-label="anchor" href="#moving-files-between-your-laptop-and-your-instance"></a>
+<h3 id="moving-files-between-your-laptop-and-nesi-with-jupyterhub">Moving files between your laptop and NeSI with Jupyterhub<a class="anchor" aria-label="anchor" href="#moving-files-between-your-laptop-and-nesi-with-jupyterhub"></a>
+</h3>
+<p>With Jupyterhub on NeSI, one of the easiest way to move small-medium
+sized files is to use the upload option on the file explorer panel</p>
+<figure><img src="fig/nesi_images/upload.png" class="figure mx-auto d-block"></figure><p>And to download a file, you can right click on it in the explorer
+panel and select “Download”</p>
+<figure><img src="fig/nesi_images/download.png" class="figure mx-auto d-block"></figure><div id="callout4" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout4"></a>
+</h3>
+<div class="callout-content">
+<p><strong>Original instructions for downloading data from
+AWS</strong></p>
+<div class="section level3">
+<h3 id="moving-files-between-your-laptop-and-your-instance---aws">Moving files between your laptop and your instance - AWS<a class="anchor" aria-label="anchor" href="#moving-files-between-your-laptop-and-your-instance---aws"></a>
 </h3>
 <p>What if the data you need is on your local computer, but you need to
 get it <em>into</em> the cloud? There are also several ways to do this,
@@ -3434,9 +3452,9 @@ not be logged into your instance, it should be showing your local
 computer. If you’re using a transfer program, it needs to be installed
 on your local machine, not your instance.</strong></p>
 </div>
-</section><section id="transferring-data-between-your-local-machine-and-the-cloud"><h2 class="section-heading">Transferring Data Between your Local Machine and the Cloud<a class="anchor" aria-label="anchor" href="#transferring-data-between-your-local-machine-and-the-cloud"></a>
+<div class="section level2">
+<h2 id="transferring-data-between-your-local-machine-and-the-cloud">Transferring Data Between your Local Machine and the Cloud<a class="anchor" aria-label="anchor" href="#transferring-data-between-your-local-machine-and-the-cloud"></a>
 </h2>
-<hr class="half-width">
 <p>If you’re using Windows with PuTTY instead of Git Bash, please select
 the alternative option here:
 <select id="id_platform" name="platformlist" onchange="change_content_by_platform('id_platform');return false;"></select></p>
@@ -3572,6 +3590,10 @@ address)</strong>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -3585,6 +3607,7 @@ address)</strong>
 <li>Transferring information to and from virtual and local
 computers.</li>
 </ul>
+</div>
 </div>
 </div>
 </div>
@@ -3730,7 +3753,7 @@ directories:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3843,7 +3866,7 @@ two-digit month, and two digit day, e.g.
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>

@@ -262,7 +262,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Redirection</h1>
-        <p> Last updated on 2023-05-08 | 
+        <p> Last updated on 2023-11-20 | 
         
         <a href="https://github.com/otagobioinformaticsspringschool/shell-genomics-nesi/edit/main/episodes/04-redirection.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -337,7 +337,7 @@ sure we are in the correct directory:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/shell_data/untrimmed_fastq</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/obss_2023/commandline/shell_data/untrimmed_fastq</span></code></pre>
 </div>
 <p>Suppose we want to see how many reads in our file have really bad
 segments containing 10 consecutive unknown nucleotides (Ns).</p>
@@ -744,7 +744,7 @@ it to a file.</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-B1</span> <span class="at">-A2</span> NNNNNNNNNN SRR098026.fastq <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-B1</span> <span class="at">-A2</span> NNNNNNNNNN SRR098026.fastq <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre>
 </div>
 <p>Because we asked <code>grep</code> for all four lines of each FASTQ
 record, we need to divide the output by four to get the number of
@@ -1169,7 +1169,7 @@ command as input to the second command.</li>
   "url": "https://otagobioinformaticsspringschool.github.io/shell-genomics-nesi/instructor/04-redirection.html",
   "identifier": "https://otagobioinformaticsspringschool.github.io/shell-genomics-nesi/instructor/04-redirection.html",
   "dateCreated": "2015-03-24",
-  "dateModified": "2023-05-08",
+  "dateModified": "2023-11-20",
   "datePublished": "2023-11-20"
 }
 
