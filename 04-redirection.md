@@ -31,7 +31,7 @@ regular expressions in this lesson, and are instead going to specify the strings
 we are searching for.
 Let's give it a try!
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## Nucleotide abbreviations
 
@@ -47,12 +47,12 @@ We'll search for strings inside of our fastq files. Let's first make sure we are
 directory:
 
 ```bash
-$ cd ~/shell_data/untrimmed_fastq
+$ cd ~/obss_2023/commandline/shell_data/untrimmed_fastq
 ```
 
 Suppose we want to see how many reads in our file have really bad segments containing 10 consecutive unknown nucleotides (Ns).
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## Determining quality
 
@@ -81,7 +81,7 @@ each of these reads. To get all of this information, we will return the line
 immediately before each match and the two lines immediately after each match.
 
 We can use the `-B` argument for grep to return a specific number of lines before
-each match. The `-A` argument returns a specific number of lines after each matching line. Here we want the line *before* and the two lines *after* each
+each match. The `-A` argument returns a specific number of lines after each matching line. Here we want the line _before_ and the two lines _after_ each
 matching line, so we add `-B1 -A2` to our grep command:
 
 ```bash
@@ -97,19 +97,19 @@ CNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Exercise
 
 1. Search for the sequence `GNATNACCACTTCC` in the `SRR098026.fastq` file.
-  Have your search return all matching lines and the name (or identifier) for each sequence
-  that contains a match.
+   Have your search return all matching lines and the name (or identifier) for each sequence
+   that contains a match.
 
 2. Search for the sequence `AAGTT` in both FASTQ files.
-  Have your search return all matching lines and the name (or identifier) for each sequence
-  that contains a match.
+   Have your search return all matching lines and the name (or identifier) for each sequence
+   that contains a match.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -174,7 +174,7 @@ in our FASTQ files that contain
 $ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq > bad_reads.txt
 ```
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## File extensions
 
@@ -216,13 +216,13 @@ $ wc -l bad_reads.txt
 802 bad_reads.txt
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Exercise
 
 How many sequences are there in `SRR098026.fastq`? Remember that every sequence is formed by four lines.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -240,13 +240,13 @@ Now you can divide this number by four to get the number of sequences in your fa
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Exercise
 
 How many sequences in `SRR098026.fastq` contain at least 3 consecutive Ns?
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -287,7 +287,7 @@ $ wc -l bad_reads.txt
 0 bad_reads.txt
 ```
 
-Here, the output of our second  call to `wc` shows that we no longer have any lines in our `bad_reads.txt` file. This is
+Here, the output of our second call to `wc` shows that we no longer have any lines in our `bad_reads.txt` file. This is
 because the second file we searched (`SRR097977.fastq`) does not contain any lines that match our
 search sequence. So our file was overwritten and is now empty.
 
@@ -325,7 +325,7 @@ $ wc -l bad_reads.txt
 802 bad_reads.txt
 ```
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## File extensions - part 2
 
@@ -378,7 +378,7 @@ the output of the grep search to the command `wc -l`. This can be helpful for in
 you would like to save it to a file.
 
 ```bash
-$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq | wc -l 
+$ grep -B1 -A2 NNNNNNNNNN SRR098026.fastq | wc -l
 ```
 
 Because we asked `grep` for all four lines of each FASTQ record, we need to divide the output by
@@ -432,7 +432,7 @@ lines which do not match the searched pattern, in this case `'^--'`. The caret (
 character matching the beginning of the line, and the pattern has to be enclose by single quotes so `grep` does
 not interpret the pattern as an extended option (starting with --).
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## Custom `grep` control
 
@@ -450,7 +450,7 @@ do anything all that impressive on their own, but when you start chaining
 them together, you can do some really powerful things very
 efficiently.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
 ## File manipulation and more practices with pipes
 
@@ -571,13 +571,13 @@ $ for filename in *.fastq
 > done
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Exercise
 
 Print the file prefix of all of the `.txt` files in our current directory.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -603,13 +603,13 @@ $ for filename in *.txt
 > done
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Exercise
 
 Remove `_2019` from all of the `.txt` files.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -636,5 +636,3 @@ $ for filename in *_2019.txt
 - `basename` gets rid of repetitive parts of names.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
