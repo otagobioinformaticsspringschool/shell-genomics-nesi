@@ -81,7 +81,7 @@ One of the differences between running on NeSI or your own machine is that on Ne
 
 <br>![image](fig/nesi_images/ServerOptions_jupyterhubNeSI.png){width="700"}
 
-1. <p>Start a terminal session from the JupyterLab launcher<br>![image](fig/nesi_images/ga-vl01jupyterhubNeSI.png){width="500"}
+4. <p>Start a terminal session from the JupyterLab launcher<br>![image](fig/nesi_images/ga-vl01jupyterhubNeSI.png){width="500"}
 
 ::::::::::::::::::::::::::::::::::::::::: callout
 
