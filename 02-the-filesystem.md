@@ -33,7 +33,7 @@ you're not already there.
 
 ```bash
 $ cd
-$ cd shell_data
+$ cd ~/obss_2023/commandline/shell_data
 $ cd untrimmed_fastq
 ```
 
@@ -66,7 +66,7 @@ $ pwd
 ```
 
 ```output
-/home/dcuser/shell_data
+/home/<username>/obss_2023/commandline/shell_data
 ```
 
 ```bash
@@ -85,9 +85,9 @@ You can chain these together like so:
 $ ls ../../
 ```
 
-prints the contents of `/home`.
+prints the contents of `/home/<username>/obss_2023`.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Finding hidden directories
 
@@ -97,7 +97,7 @@ identify the name of the text file in that directory.
 
 Hint: hidden files and folders in Unix start with `.`, for example `.my_hidden_directory`
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -163,7 +163,7 @@ $ cd
 Then enter the command:
 
 ```bash
-$ ls shell_data
+$ ls ~/obss_2023/commandline/shell_data
 ```
 
 ```output
@@ -179,30 +179,30 @@ Try entering:
 
 ```bash
 $ cd
-$ cd shell_data/untrimmed_fastq
+$ cd ~/obss_2023/commandline/shell_data/untrimmed_fastq
 ```
 
 This will take you to the `untrimmed_fastq` directory without having to go through
 the intermediate directory.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Navigating practice
 
 Navigate to your home directory. From there, list the contents of the `untrimmed_fastq`
 directory.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
 ```bash
 $ cd
-$ ls shell_data/untrimmed_fastq/
+$ ls ~/obss_2023/commandline/shell_data/untrimmed_fastq/
 ```
 
 ```output
-SRR097977.fastq  SRR098026.fastq 
+SRR097977.fastq  SRR098026.fastq
 ```
 
 :::::::::::::::::::::::::
@@ -212,35 +212,35 @@ SRR097977.fastq  SRR098026.fastq
 ## Full vs. Relative Paths
 
 The `cd` command takes an argument which is a directory
-name. Directories can be specified using either a *relative* path or a
-full *absolute* path. The directories on the computer are arranged into a
+name. Directories can be specified using either a _relative_ path or a
+full _absolute_ path. The directories on the computer are arranged into a
 hierarchy. The full path tells you where a directory is in that
 hierarchy. Navigate to the home directory, then enter the `pwd`
 command.
 
 ```bash
-$ cd  
-$ pwd  
+$ cd
+$ pwd
 ```
 
 You will see:
 
 ```output
-/home/dcuser
+/home/<username>
 ```
 
 This is the full name of your home directory. This tells you that you
 are in a directory called `dcuser`, which sits inside a directory called
 `home` which sits inside the very top directory in the hierarchy. The
 very top of the hierarchy is a directory called `/` which is usually
-referred to as the *root directory*. So, to summarize: `dcuser` is a
+referred to as the _root directory_. So, to summarize: `dcuser` is a
 directory in `home` which is a directory in `/`. More on `root` and
 `home` in the next section.
 
 Now enter the following command:
 
 ```bash
-$ cd /home/dcuser/shell_data/.hidden
+$ cd /home/<username>/obss_2023/commandline/shell_data/.hidden
 ```
 
 This jumps forward multiple levels to the `.hidden` directory.
@@ -253,7 +253,7 @@ $ cd
 You can also navigate to the `.hidden` directory using:
 
 ```bash
-$ cd shell_data/.hidden
+$ cd obss_2023/commandline/shell_data/.hidden
 ```
 
 These two commands have the same effect, they both take us to the `.hidden` directory.
@@ -276,7 +276,7 @@ Over time, it will become easier for you to keep a mental note of the
 structure of the directories that you are using and how to quickly
 navigate amongst them.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Relative path resolution
 
@@ -290,15 +290,15 @@ what will `ls ../backup` display?
 
 ![](fig/filesystem-challenge.svg){alt='File System for Challenge Questions'}
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
-1. No: there *is* a directory `backup` in `/Users`.
+1. No: there _is_ a directory `backup` in `/Users`.
 2. No: this is the content of `Users/thing/backup`,
-  but with `..` we asked for one level further up.
+   but with `..` we asked for one level further up.
 3. No: see previous explanation.
-  Also, we did not specify `-F` to display `/` at the end of the directory names.
+   Also, we did not specify `-F` to display `/` at the end of the directory names.
 4. Yes: `../backup` refers to `/Users/backup`.
 
 :::::::::::::::::::::::::
@@ -320,12 +320,12 @@ home directory. Dealing with the `home` directory is very common.
 The tilde character, `~`, is a shortcut for your home directory.
 In our case, the `root` directory is **two** levels above our
 `home` directory, so `cd` or `cd ~` will take you to
-`/home/dcuser` and `cd /` will take you to `/`. Navigate to the
+`/home/<username>` and `cd /` will take you to `/`. Navigate to the
 `shell_data` directory:
 
 ```bash
 $ cd
-$ cd shell_data
+$ cd ~/obss_2023/commandline/shell_data
 ```
 
 Then enter the command:
@@ -335,7 +335,7 @@ $ ls ~
 ```
 
 ```output
-R  r_data  shell_data
+obss_2023
 ```
 
 This prints the contents of your home directory, without you needing to
@@ -350,5 +350,3 @@ The commands `cd`, and `cd ~` are very useful for quickly navigating back to you
 - Relative paths specify a location starting from the current location, while absolute paths specify a location from the root of the file system.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

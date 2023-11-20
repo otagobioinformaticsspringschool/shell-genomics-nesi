@@ -35,7 +35,7 @@ have two results files, which are stored in our `untrimmed_fastq` directory.
 Navigate to your `untrimmed_fastq` directory:
 
 ```bash
-$ cd ~/shell_data/untrimmed_fastq
+$ cd ~/obss_2023/commandline/shell_data/untrimmed_fastq
 ```
 
 We are interested in looking at the FASTQ files in this directory. We can list
@@ -71,14 +71,16 @@ $ ls /usr/bin/*.sh
 ```
 
 ```output
-/usr/bin/amuFormat.sh  /usr/bin/gettext.sh  /usr/bin/gvmap.sh
+/usr/bin/gettext.sh             /usr/bin/ibdiagm.sh   /usr/bin/mft_uninstall.sh       /usr/bin/unix-lpr.sh
+/usr/bin/gflags_completions.sh  /usr/bin/lesspipe.sh  /usr/bin/mlnx_interface_mgr.sh
+/usr/bin/gvmap.sh               /usr/bin/lprsetup.sh  /usr/bin/setup-nsssysinit.sh
 ```
 
 Lists every file in `/usr/bin` that ends in the characters `.sh`.
 Note that the output displays **full** paths to files, since
 each result starts with `/`.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Exercise
 
@@ -96,20 +98,20 @@ Hint: The bonus question requires a Unix wildcard that we haven't talked about
 yet. Try searching the internet for information about Unix wildcards to find
 what you need to solve the bonus problem.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
 1. `ls /usr/bin/c*`
 2. `ls /usr/bin/*a*`
 3. `ls /usr/bin/*o`  
-  Bonus: `ls /usr/bin/*[ac]*`
+   Bonus: `ls /usr/bin/*[ac]*`
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Exercise
 
@@ -128,10 +130,10 @@ SRR097977.fastq SRR098026.fastq
 The `*` is expanded to include any file that ends with `.fastq`. We can see that the output of
 `echo *.fastq` is the same as that of `ls *.fastq`.
 
-What would the output look like if the wildcard could *not* be matched? Compare the outputs of
+What would the output look like if the wildcard could _not_ be matched? Compare the outputs of
 `echo *.missing` and `ls *.missing`.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -165,7 +167,7 @@ A few more useful shortcuts:
 
 - <kbd>Ctrl</kbd>\+<kbd>C</kbd> will cancel the command you are writing, and give you a
   fresh prompt.
-- <kbd>Ctrl</kbd>\+<kbd>R</kbd> will do a reverse-search through your command history.  This
+- <kbd>Ctrl</kbd>\+<kbd>R</kbd> will do a reverse-search through your command history. This
   is very useful.
 - <kbd>Ctrl</kbd>\+<kbd>L</kbd> or the `clear` command will clear your screen.
 
@@ -197,14 +199,14 @@ You will be glad you learned this when you need to re-run very complicated comma
 For more information on advanced usage of `history`, read section 9.3 of
 [Bash manual](https://www.gnu.org/software/bash/manual/html_node/index.html).
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Exercise
 
 Find the line number in your history for the command that listed all the .sh
 files in `/usr/bin`. Rerun that command.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -230,21 +232,21 @@ $ cat SRR098026.fastq
 
 This will print out all of the contents of the `SRR098026.fastq` to the screen.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Exercise
 
-1. Print out the contents of the `~/shell_data/untrimmed_fastq/SRR097977.fastq` file. What is the last line of the file?
+1. Print out the contents of the `~/obss_2023/commandline/shell_data/untrimmed_fastq/SRR097977.fastq` file. What is the last line of the file?
 2. From your home directory, and without changing directories,
-  use one short command to print the contents of all of the files in
-  the `~/shell_data/untrimmed_fastq` directory.
+   use one short command to print the contents of all of the files in
+   the `~/obss_2023/commandline/shell_data/untrimmed_fastq` directory.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
 1. The last line of the file is `C:CCC::CCCCCCCC<8?6A:C28C<608'&&&,'$`.
-2. `cat ~/shell_data/untrimmed_fastq/*`
+2. `cat ~/obss_2023/commandline/shell_data/untrimmed_fastq/*`
 
 :::::::::::::::::::::::::
 
@@ -263,20 +265,20 @@ $ less SRR097977.fastq
 
 Some navigation commands in `less`:
 
-| key   | action                                                                                                       | 
-| ----- | ------------------------------------------------------------------------------------------------------------ |
-| <kbd>Space</kbd> | to go forward                                                                                                | 
-| <kbd>b</kbd>     | to go backward                                                                                               | 
-| <kbd>g</kbd>     | to go to the beginning                                                                                       | 
-| <kbd>G</kbd>     | to go to the end                                                                                             | 
-| <kbd>q</kbd>     | to quit                                                                                                      | 
+| key              | action                 |
+| ---------------- | ---------------------- |
+| <kbd>Space</kbd> | to go forward          |
+| <kbd>b</kbd>     | to go backward         |
+| <kbd>g</kbd>     | to go to the beginning |
+| <kbd>G</kbd>     | to go to the end       |
+| <kbd>q</kbd>     | to quit                |
 
 `less` also gives you a way of searching through files. Use the
 "/" key to begin a search. Enter the word you would like
 to search for and press `enter`. The screen will jump to the next location where
 that word is found.
 
-**Shortcut:** If you hit "/" then "enter", `less` will  repeat
+**Shortcut:** If you hit "/" then "enter", `less` will repeat
 the previous search. `less` searches from the current location and
 works its way forward. Scroll up a couple lines on your terminal to verify
 you are at the beginning of the file. Note, if you are at the end of the file and search
@@ -290,13 +292,13 @@ and where it is in the file. If you continue to type `/` and hit return, you wil
 forward to the next instance of this sequence motif. If you instead type `?` and hit
 return, you will search backwards and move up the file to previous examples of this motif.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Exercise
 
 What are the next three nucleotides (characters) after the first instance of the sequence quoted above?
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -376,12 +378,12 @@ Although it looks complicated (and it is), it's easy to understand the
 [fastq](https://en.wikipedia.org/wiki/FASTQ_format) format with a little decoding. Some rules about the format
 include...
 
-| Line  | Description                                                                                                  | 
-| ----- | ------------------------------------------------------------------------------------------------------------ |
-| 1     | Always begins with '@' and then information about the read                                                   | 
-| 2     | The actual DNA sequence                                                                                      | 
-| 3     | Always begins with a '+' and sometimes the same info in line 1                                               | 
-| 4     | Has a string of characters which represent the quality scores; must have same number of characters as line 2 | 
+| Line | Description                                                                                                  |
+| ---- | ------------------------------------------------------------------------------------------------------------ |
+| 1    | Always begins with '@' and then information about the read                                                   |
+| 2    | The actual DNA sequence                                                                                      |
+| 3    | Always begins with a '+' and sometimes the same info in line 1                                               |
+| 4    | Has a string of characters which represent the quality scores; must have same number of characters as line 2 |
 
 We can view the first complete read in one of the files in our dataset by using `head` to look at
 the first four lines.
@@ -419,7 +421,7 @@ Each character is assigned a quality score between 0 and 42 as shown in the char
 ```output
 Quality encoding: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJK
                   |         |         |         |         |
-Quality score:    0........10........20........30........40..                          
+Quality score:    0........10........20........30........40..
 ```
 
 Each quality score represents the probability that the corresponding nucleotide call is
@@ -452,12 +454,12 @@ of those files. In cases like this, it's much faster to do these operations at t
 ### Copying Files
 
 When working with computational data, it's important to keep a safe copy of that data that can't be accidentally overwritten or deleted.
-For this lesson, our raw data is our FASTQ files.  We don't want to accidentally change the original files, so we'll make a copy of them
+For this lesson, our raw data is our FASTQ files. We don't want to accidentally change the original files, so we'll make a copy of them
 and change the file permissions so that we can read from, but not write to, the files.
 
 First, let's make a copy of one of our FASTQ files using the `cp` command.
 
-Navigate to the `shell_data/untrimmed_fastq` directory and enter:
+Navigate to the `~/obss_2023/commandline/shell_data/untrimmed_fastq` directory and enter:
 
 ```bash
 $ cp SRR098026.fastq SRR098026-copy.fastq
@@ -539,7 +541,7 @@ Our goal for now is to change permissions on this file so that you no longer hav
 
 ```bash
 $ chmod -w SRR098026-backup.fastq
-$ ls -l 
+$ ls -l
 ```
 
 ```output
@@ -557,7 +559,7 @@ $ rm SRR098026-backup.fastq
 You'll be asked if you want to override your file permissions:
 
 ```output
-rm: remove write-protected regular file ‘SRR098026-backup.fastq'? 
+rm: remove write-protected regular file ‘SRR098026-backup.fastq'?
 ```
 
 You should enter `n` for no. If you enter `n` (for no), the file will not be deleted. If you enter `y`, you will delete the file. This gives us an extra
@@ -580,20 +582,20 @@ $ rm -r backup
 This will delete not only the directory, but all files within the directory. If you have write-protected files in the directory,
 you will be asked whether you want to override your permission settings.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Exercise
 
-Starting in the `shell_data/untrimmed_fastq/` directory, do the following:
+Starting in the `~/obss_2023/commandline/shell_data/untrimmed_fastq/` directory, do the following:
 
 1. Make sure that you have deleted your backup directory and all files it contains.
 2. Create a backup of each of your FASTQ files using `cp`. (Note: You'll need to do this individually for each of the two FASTQ files. We haven't
-  learned yet how to do this
-  with a wildcard.)
+   learned yet how to do this
+   with a wildcard.)
 3. Use a wildcard to move all of your backup files to a new backup directory.
 4. Change the permissions on all of your backup files to be write-protected.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
@@ -601,7 +603,7 @@ Starting in the `shell_data/untrimmed_fastq/` directory, do the following:
 2. `cp SRR098026.fastq SRR098026-backup.fastq` and `cp SRR097977.fastq SRR097977-backup.fastq`
 3. `mkdir backup` and `mv *-backup.fastq backup`
 4. `chmod -w backup/*-backup.fastq`  
-  It's always a good idea to check your work with `ls -l backup`. You should see something like:
+   It's always a good idea to check your work with `ls -l backup`. You should see something like:
 
 ```output
 -r--r--r-- 1 dcuser dcuser 47552 Nov 15 23:06 SRR097977-backup.fastq
@@ -620,5 +622,3 @@ Starting in the `shell_data/untrimmed_fastq/` directory, do the following:
 - The `history` command and the up arrow on your keyboard can be used to repeat recently used commands.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
