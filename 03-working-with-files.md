@@ -400,48 +400,7 @@ NNNNNNNNNNNNNNNNCNNNNNNNNNNNNNNNNNN
 ```
 
 All but one of the nucleotides in this read are unknown (`N`). This is a pretty bad read!
-
-Line 4 shows the quality for each nucleotide in the read. Quality is interpreted as the
-probability of an incorrect base call (e.g. 1 in 10) or, equivalently, the base call
-accuracy (e.g. 90%). To make it possible to line up each individual nucleotide with its quality
-score, the numerical score is converted into a code where each individual character
-represents the numerical quality score for an individual nucleotide. For example, in the line
-above, the quality score line is:
-
-```output
-!!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!!!
-```
-
-The `#` character and each of the `!` characters represent the encoded quality for an
-individual nucleotide. The numerical value assigned to each of these characters depends on the
-sequencing platform that generated the reads. The sequencing machine used to generate our data
-uses the standard Sanger quality PHRED score encoding, Illumina version 1.8 onwards.
-Each character is assigned a quality score between 0 and 42 as shown in the chart below.
-
-```output
-Quality encoding: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJK
-                  |         |         |         |         |
-Quality score:    0........10........20........30........40..
-```
-
-Each quality score represents the probability that the corresponding nucleotide call is
-incorrect. This quality score is logarithmically based, so a quality score of 10 reflects a
-base call accuracy of 90%, but a quality score of 20 reflects a base call accuracy of 99%.
-These probability values are the results from the base calling algorithm and dependent on how
-much signal was captured for the base incorporation.
-
-Looking back at our read:
-
-```output
-@SRR098026.1 HWUSI-EAS1599_1:2:1:0:968 length=35
-NNNNNNNNNNNNNNNNCNNNNNNNNNNNNNNNNNN
-+SRR098026.1 HWUSI-EAS1599_1:2:1:0:968 length=35
-!!!!!!!!!!!!!!!!#!!!!!!!!!!!!!!!!!!
-```
-
-we can now see that the quality of each of the `N`s is 0 and the quality of the only
-nucleotide call (`C`) is also very poor (`#` = a quality score of 2). This is indeed a very
-bad read.
+Line 4 shows the quality for each nucleotide in the read. We'll cover the Fastq format more in depth tomorrow in when we look at [assessing read quality](https://otagobioinformaticsspringschool.github.io/wrangling-genomics-nesi/02-quality-control.html) in the DNA variant calling workshop.
 
 ## Creating, moving, copying, and removing
 
