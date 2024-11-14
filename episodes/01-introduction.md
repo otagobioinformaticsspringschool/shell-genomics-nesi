@@ -216,7 +216,7 @@ $ ls
 ```
 
 ```output
-obss_2023
+obss_2024
 ```
 
 `ls` prints the names of the files and directories in the current directory in
@@ -228,11 +228,11 @@ The command to change locations in our file system is `cd`, followed by a
 directory name to change our working directory.
 `cd` stands for "change directory".
 
-Let's say we want to navigate to the `obss_2023/commandline/shell_data` directory we saw above. We can
+Let's say we want to navigate to the `obss_2024/commandline/shell_data` directory we saw above. We can
 use the following command to get there:
 
 ```bash
-$ cd obss_2023
+$ cd obss_2024
 ```
 
 Let's look at what is in this directory:
@@ -370,7 +370,7 @@ $ cd
 then enter:
 
 ```bash
-$ cd obss_2023/com<tab>/she<tab>_<tab>
+$ cd obss_2024/com<tab>/she<tab>_<tab>
 ```
 
 The shell will fill in the rest of the directory name for `commandline` and then `shell_data`.
