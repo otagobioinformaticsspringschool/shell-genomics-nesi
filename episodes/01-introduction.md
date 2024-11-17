@@ -242,7 +242,7 @@ $ ls
 ```
 
 ```output
-commandline  genome_assembly  genomic_dna  intro_git  intro_snakemake  nanopore
+bioc_rnaseq  commandline  edna  genome_assembly  genomic_dna  intro_r
 ```
 
 And we'll then navigate into `commandline`
